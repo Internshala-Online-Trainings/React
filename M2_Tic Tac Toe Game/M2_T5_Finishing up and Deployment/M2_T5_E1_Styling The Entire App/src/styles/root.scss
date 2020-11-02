@@ -1,0 +1,172 @@
+$green: #12e177;
+$orange: #ffc72a;
+$blue: #4c43d4;
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: $blue;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.app {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-green {
+  color: $green;
+}
+
+.text-orange {
+  color: $orange;
+}
+
+.history-wrapper {
+  width: 300px;
+  text-align: center;
+  margin-bottom: 20px;
+  .history {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    li {
+      list-style: none;
+      text-align: left;
+      &:before {
+        content: '';
+        border-radius: 50%;
+        display: inline-block;
+        height: 5px;
+        width: 5px;
+        background-color: $green;
+        margin-right: 4px;
+        margin-bottom: 1px;
+      }
+
+      .btn-move {
+        color: #fff;
+        &.active {
+          font-weight: bold;
+          color: $green;
+        }
+      }
+    }
+  }
+}
+
+.status-message {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  span {
+    font-weight: normal;
+  }
+}
+
+.btn-reset {
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 15px;
+  padding: 12px 18px;
+  margin-top: 25px;
+  transition: all 0.2s;
+  background-color: $blue;
+  box-shadow: 0px 0px 0px 1px $orange;
+  &.active {
+    background-color: $orange;
+    box-shadow: none;
+  }
+}
+
+.board {
+  .board-row {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid #fff;
+    &:last-child {
+      border-bottom: none;
+    }
+    .square {
+      width: 80px;
+      height: 80px;
+      border-right: 2px solid #fff;
+      font-size: 2.5rem;
+      padding: 0;
+      overflow: hidden;
+      transition: all 0.2s;
+      &:last-child {
+        border-right: none;
+      }
+      &.winning {
+        animation: scaleText 1.4s infinite;
+        @keyframes scaleText {
+          0% {
+            transform: 2.5rem;
+          }
+          50% {
+            font-size: 3.5rem;
+          }
+          100% {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-balls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  z-index: -1;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  &:before {
+    background-color: $orange;
+    right: -75px;
+    bottom: -75px;
+    @media screen and (min-width: 476px) {
+      width: 220px;
+      height: 220px;
+      right: -110px;
+      bottom: -110px;
+    }
+  }
+
+  &:after {
+    background-color: $green;
+    top: -75px;
+    left: -75px;
+    @media screen and (min-width: 476px) {
+      width: 220px;
+      height: 220px;
+      top: -110px;
+      left: -110px;
+    }
+  }
+}
