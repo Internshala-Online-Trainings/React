@@ -1,0 +1,44 @@
+.rs-drawer-body {
+  margin: 20px;
+}
+
+.rs-input[disabled] {
+  color: #575757;
+}
+
+.rs-modal {
+  max-width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.rs-modal-body {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  min-height: 250px;
+}
+
+textarea.rs-input {
+  min-width: 160px;
+  min-height: 35px;
+}
+
+.rs-popover {
+  max-height: 70vh;
+  min-width: 300px;
+  overflow-y: auto;
+}
+
+.w-100 {
+  .rs-uploader-trigger-btn {
+    width: 100%;
+  }
+}
+
+.rs-notification-item-wrapper {
+  @media screen and (max-width: 450px) {
+    max-width: 300px;
+  }
+}
